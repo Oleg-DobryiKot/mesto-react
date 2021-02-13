@@ -1,6 +1,5 @@
-import './main.css';
 import api from '../../utils/api';
-import Card from '../card/Card';
+import Card from '../Card/Card';
 import { useEffect, useState } from 'react';
 
 function Main({onEditProfile, onAddPlace, onEditAvatar, onCardClick}) {
@@ -18,10 +17,7 @@ function Main({onEditProfile, onAddPlace, onEditAvatar, onCardClick}) {
       })
       .catch((err) => {
         console.error(err);
-      })
-  }, [])
-
-  useEffect(() => {
+      });
     api.getInitialCards()
       .then(res => {
         const cards = res.map(card => {
@@ -36,7 +32,7 @@ function Main({onEditProfile, onAddPlace, onEditAvatar, onCardClick}) {
       })
       .catch((err) => {
         console.error(err);
-      })
+      })    
   }, [])
 
   return (
