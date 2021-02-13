@@ -11,6 +11,7 @@ function App() {
   const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = useState(false);
   const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = useState(false);
   const [isImagePopupOpen, setIsImagePopupOpen] = useState(false);
+  const [selectedCard, setSelectedCard] = useState({});
 
   function handleEditAvatarClick() {
     setIsEditAvatarPopupOpen(true);
@@ -24,24 +25,28 @@ function App() {
     setIsAddPlacePopupOpen(true);
   }
 
-  function handleImageClick() {
+  function handleCardClick(card) {
     setIsImagePopupOpen(true);
+    setSelectedCard(card);
   }
 
   function closeAllPopups() {
     setIsAddPlacePopupOpen(false);
     setIsEditProfilePopupOpen(false);
     setIsEditAvatarPopupOpen(false);
+    setIsImagePopupOpen(false);
+    setSelectedCard({});
   }
 
   return (
-    <>
+    
     <div className="page">
       <Header/>
       <Main
         onEditProfile={ handleEditProfileClick }
         onAddPlace={ handleAddPlaceClick }
         onEditAvatar={ handleEditAvatarClick }
+        onCardClick={ handleCardClick }
       />
       <Footer/>
       <PopupWithForm
@@ -51,10 +56,10 @@ function App() {
         onClose={ closeAllPopups }
       >
         <input type="text" placeholder="Имя" name="name" className="popup__input-text popup__input-text_name"
-            minlength="2" maxlength="40" required/>
+            minLength="2" maxLength="40" required/>
         <span className="popup__error popup__error_name">Введите имя</span>
         <input type="text" placeholder="Род занятий" name="description"
-            className="popup__input-text popup__input-text_description" minlength="2" maxlength="200" required/>
+            className="popup__input-text popup__input-text_description" minLength="2" maxLength="200" required/>
           <span className="popup__error popup__error_description">Введите род
             занятий</span>
       </PopupWithForm>
@@ -65,7 +70,7 @@ function App() {
         onClose={ closeAllPopups }
       >
       <input type="text" placeholder="Название" name="name" className="popup__input-text popup__input-text_title"
-            minlength="2" maxlength="30" required/>
+            minLength="2" maxLength="30" required/>
           <span
             className="popup__error popup__error_name"
           >
@@ -85,9 +90,13 @@ function App() {
       <input type="url" placeholder="Ссылка на аватарку..." name="avatar" className="popup__input-text" required/>
           <span className="popup__error popup__error_avatar">Введите URL аватарки</span>
       </PopupWithForm>
-      <ImagePopup isOpen={ isImagePopupOpen } onClose={ closeAllPopups }/>
+      <ImagePopup 
+        card={ selectedCard }
+        isOpen={ isImagePopupOpen }
+        onClose={ closeAllPopups }
+      />
   </div>
-  </>
+
   );
 }
 

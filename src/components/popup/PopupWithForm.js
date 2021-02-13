@@ -9,7 +9,7 @@ function PopupWithForm({title, name, submitText, children, isOpen, onClose}) {
         <form 
           name={name} 
           className={`popup__input-form popup__input-form_type-${name}`} 
-          novalidate>
+          noValidate>
             { children }
             <button type="submit" form={ name } className={`popup__input-btn popup__input-btn_type-${name}`}>
               { submitText || 'Сохранить' }

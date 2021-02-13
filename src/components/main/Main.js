@@ -3,7 +3,7 @@ import api from '../../utils/api';
 import Card from '../card/Card';
 import { useEffect, useState } from 'react';
 
-function Main({onEditProfile, onAddPlace, onEditAvatar}) {
+function Main({onEditProfile, onAddPlace, onEditAvatar, onCardClick}) {
   const [userName, setUserName] = useState('');
   const [userDescription, setUserDescription] = useState('');
   const [userAvatar, setUserAvatar] = useState('');
@@ -26,19 +26,23 @@ function Main({onEditProfile, onAddPlace, onEditAvatar}) {
       .then(res => {
         const cards = res.map(card => {
           return {
-            id: card._id,
+            _id: card._id,
             name: card.name,
-            link: card.link
+            link: card.link,
+            likes: card.likes
           }
         })
         setCards(cards);
+      })
+      .catch((err) => {
+        console.error(err);
       })
   }, [])
 
   return (
     <main className="content">
       <section className="profile">
-        <div className="profile__overlay" onClick={onEditAvatar}>
+        <div className="profile__overlay" onClick={ onEditAvatar }>
           <img 
             className="profile__avatar" 
             src={ userAvatar } 
@@ -51,7 +55,7 @@ function Main({onEditProfile, onAddPlace, onEditAvatar}) {
             <button 
               type="button" 
               className="profile__edit-btn"
-              onClick={onEditProfile}>  
+              onClick={ onEditProfile }>  
             </button>
           </div>
           <p className="profile__description">{ userDescription }</p>
@@ -59,12 +63,12 @@ function Main({onEditProfile, onAddPlace, onEditAvatar}) {
         <button 
           type="button" 
           className="profile__add-btn"
-          onClick={onAddPlace}> 
+          onClick={ onAddPlace }> 
         </button>
       </section>
 
       <section className="elements">
-        {cards.map(card => <Card key={ card._id } { ...card }/>)}
+        {cards.map(card => <Card key={ card._id } { ...card } onCardClick={ onCardClick }/>)}
       </section>
 
     </main>

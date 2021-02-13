@@ -1,10 +1,11 @@
-function ImagePopup({isOpen, onClose}) {
+function ImagePopup(props) {
+  //{card, onClose, isOpen}
   return (
-    <section className={ `popup popup_type-image ${ isOpen ? 'popup_is-opened' : '' }`}>
+    <section className={ `popup popup_type-image ${ props.isOpen ? 'popup_is-opened' : '' }`}>
     <div className="popup__container popup__container_type-image">
-      <button onClick={ onClose } type="button" className="popup__close"></button>
-      <img className="popup__fullpic" src="#" alt="#"/>
-      <h3 className="popup__title popup__title_type-image">Тестовое название</h3>
+      <button onClick={ props.onClose } type="button" className="popup__close"></button>
+      <img className="popup__fullpic" src={ props.card.link } alt={ props.card.name }/>
+      <h3 className="popup__title popup__title_type-image">{ props.card.name }</h3>
     </div>
   </section>
   )
