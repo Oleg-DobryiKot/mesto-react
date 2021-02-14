@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/Oleg-DobryiKot/mesto-reactstatic/css/main.5fde256c.chunk.css",
+    "main.js": "/Oleg-DobryiKot/mesto-reactstatic/js/main.e0cee497.chunk.js",
+    "main.js.map": "/Oleg-DobryiKot/mesto-reactstatic/js/main.e0cee497.chunk.js.map",
+    "runtime-main.js": "/Oleg-DobryiKot/mesto-reactstatic/js/runtime-main.20e17015.js",
+    "runtime-main.js.map": "/Oleg-DobryiKot/mesto-reactstatic/js/runtime-main.20e17015.js.map",
+    "static/js/2.9c899798.chunk.js": "/Oleg-DobryiKot/mesto-reactstatic/js/2.9c899798.chunk.js",
+    "static/js/2.9c899798.chunk.js.map": "/Oleg-DobryiKot/mesto-reactstatic/js/2.9c899798.chunk.js.map",
+    "static/js/3.a87d210f.chunk.js": "/Oleg-DobryiKot/mesto-reactstatic/js/3.a87d210f.chunk.js",
+    "static/js/3.a87d210f.chunk.js.map": "/Oleg-DobryiKot/mesto-reactstatic/js/3.a87d210f.chunk.js.map",
+    "index.html": "/Oleg-DobryiKot/mesto-reactindex.html",
+    "static/css/main.5fde256c.chunk.css.map": "/Oleg-DobryiKot/mesto-reactstatic/css/main.5fde256c.chunk.css.map",
+    "static/js/2.9c899798.chunk.js.LICENSE.txt": "/Oleg-DobryiKot/mesto-reactstatic/js/2.9c899798.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/Oleg-DobryiKot/mesto-reactstatic/media/white-trash.e3c42771.svg",
+    "static/media/logo.c2821b38.svg": "/Oleg-DobryiKot/mesto-reactstatic/media/logo.c2821b38.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.20e17015.js",
+    "static/js/2.9c899798.chunk.js",
+    "static/css/main.5fde256c.chunk.css",
+    "static/js/main.e0cee497.chunk.js"
+  ]
+}
