@@ -1,9 +1,9 @@
 import './App.css';
-import Header from './Header/Header';
-import Main from './Main/Main';
-import Footer from './Footer/Footer';
-import PopupWithForm from './PopupWithForm/PopupWithForm';
-import ImagePopup from './ImagePopup/ImagePopup';
+import Header from '../Header/Header';
+import Main from '../Main/Main';
+import Footer from '../Footer/Footer';
+import PopupWithForm from '../PopupWithForm/PopupWithForm';
+import ImagePopup from '../ImagePopup/ImagePopup';
 import { useState } from 'react';
 
 function App() {
@@ -39,7 +39,6 @@ function App() {
   }
 
   return (
-    
     <div className="page">
       <Header/>
       <Main
@@ -55,13 +54,26 @@ function App() {
         isOpen={ isEditProfilePopupOpen }
         onClose={ closeAllPopups }
       >
-        <input type="text" placeholder="Имя" name="name" className="popup__input-text popup__input-text_name"
-            minLength="2" maxLength="40" required/>
+        <input
+          type="text"
+          placeholder="Имя"
+          name="name"
+          className="popup__input-text popup__input-text_name"
+          minLength="2"
+          maxLength="40"
+          required
+        />
         <span className="popup__error popup__error_name">Введите имя</span>
-        <input type="text" placeholder="Род занятий" name="description"
-            className="popup__input-text popup__input-text_description" minLength="2" maxLength="200" required/>
-          <span className="popup__error popup__error_description">Введите род
-            занятий</span>
+        <input
+          type="text"
+          placeholder="Род занятий"
+          name="description"
+          className="popup__input-text popup__input-text_description"
+          minLength="2"
+          maxLength="200"
+          required
+        />
+        <span className="popup__error popup__error_description">Введите род занятий</span>
       </PopupWithForm>
       <PopupWithForm 
         name="card"
@@ -69,26 +81,45 @@ function App() {
         isOpen={ isAddPlacePopupOpen }
         onClose={ closeAllPopups }
       >
-      <input type="text" placeholder="Название" name="name" className="popup__input-text popup__input-text_title"
-            minLength="2" maxLength="30" required/>
-          <span
-            className="popup__error popup__error_name"
-          >
-            Заполните это поле
-          </span>
-          <input type="url" placeholder="Сыылка на картинку" name="link"
-            className="popup__input-text popup__input-text_link" required/>
-          <span className="popup__error popup__error_link">Введите URL картинки</span>
+        <input 
+          type="text"
+          placeholder="Название"
+          name="name"
+          className="popup__input-text popup__input-text_title"
+          minLength="2"
+          maxLength="30"
+          required
+        />
+        <span className="popup__error popup__error_name">Заполните это поле</span>
+        <input 
+          type="url"
+          placeholder="Сыылка на картинку"
+          name="link"
+          className="popup__input-text popup__input-text_link"
+          required
+        />
+        <span className="popup__error popup__error_link">Введите URL картинки</span>
       </PopupWithForm>
-      <PopupWithForm name="delete" title="Вы уверены?" submitText="Да" onClose={ closeAllPopups }/>
+      <PopupWithForm 
+        name="delete"
+        title="Вы уверены?"
+        submitText="Да"
+        onClose={ closeAllPopups }
+      />
       <PopupWithForm 
         name="update-avatar"
         title="Обновить аватар"
         isOpen={ isEditAvatarPopupOpen }
         onClose={ closeAllPopups }
       >
-      <input type="url" placeholder="Ссылка на аватарку..." name="avatar" className="popup__input-text" required/>
-          <span className="popup__error popup__error_avatar">Введите URL аватарки</span>
+        <input 
+          type="url"
+          placeholder="Ссылка на аватарку..."
+          name="avatar"
+          className="popup__input-text"
+          required
+        />
+        <span className="popup__error popup__error_avatar">Введите URL аватарки</span>
       </PopupWithForm>
       <ImagePopup 
         card={ selectedCard }
