@@ -16,8 +16,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "gh-pages -d dist",
-    "predeploy": "npm run build"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -37,6 +37,24 @@
       "last 1 safari version"
     ]
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Oleg-DobryiKot/mesto-react.git"
+  },
+  "keywords": [
+    "web-development",
+    "html",
+    "css",
+    "react",
+    "webpack",
+    "js"
+  ],
+  "author": "Matveev Oleg",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Oleg-DobryiKot/mesto-react/issues"
+  },
+  "homepage": "https://github.com/Oleg-DobryiKot/mesto-react#readme",
   "devDependencies": {
     "gh-pages": "^3.1.0"
   }
