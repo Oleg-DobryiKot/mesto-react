@@ -1,4 +1,4 @@
-import logo from '../../images/logo/logo.svg';
+import logo from '../images/logo/logo.svg';
 import './Header.css';
 
 function Header(props) {

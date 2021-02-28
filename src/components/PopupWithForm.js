@@ -8,7 +8,6 @@ function PopupWithForm({title, name, submitText='Сохранить', children, 
         <h3 className="popup__title">{title}</h3>
         <form 
           name={name}
-          // onSubmit={ onSubmit }
           className={`popup__input-form popup__input-form_type-${name}`} 
           noValidate>
             { children }

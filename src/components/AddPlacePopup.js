@@ -1,8 +1,8 @@
 import React from 'react';
-import PopupWithForm from '../PopupWithForm/PopupWithForm';
-import { useState, useEffect, useContext } from 'react';
+import PopupWithForm from './PopupWithForm';
+import { useState, useContext } from 'react';
 import 'react-dom';
-import { CurrentUserContext } from '../../contexts/CurrentUserContext';
+import { CurrentUserContext } from '../contexts/CurrentUserContext';
 
 function AddPlacePopup({isOpen, onClose, onAddPlace}) {
   const [placeName, setPlaceName] = useState('');
@@ -24,11 +24,6 @@ function AddPlacePopup({isOpen, onClose, onAddPlace}) {
       link: placeLink
     });
   } 
-
-//   useEffect(() => {
-//     setName(currentUser.name);
-//     setDescription(currentUser.about);
-//   }, [currentUser]); 
 
   return (
     <PopupWithForm 

@@ -1,5 +1,5 @@
 import React from 'react';
-import PopupWithForm from '../PopupWithForm/PopupWithForm';
+import PopupWithForm from './PopupWithForm';
 import { useState, useEffect, useRef } from 'react';
 import 'react-dom';
 
