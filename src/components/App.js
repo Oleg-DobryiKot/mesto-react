@@ -24,10 +24,12 @@ function App() {
 
   function handleCardLike(card) {
     const isLiked = card.likes.some(item => item._id === currentUser._id);
-    api.changeLikeCardStatus(card._id, !isLiked).then((newCard) => {
-      const newCards = cards.map(cardItem => cardItem._id === card._id ? newCard : cardItem);
-      setCards(newCards);
-    });
+    api.changeLikeCardStatus(card._id, !isLiked)
+      .then((newCard) => {
+        const newCards = cards.map(cardItem => cardItem._id === card._id ? newCard : cardItem);
+        setCards(newCards)
+      })
+      .catch(console.error);
   } 
 
   function handleCardDelete(card) {
@@ -37,10 +39,12 @@ function App() {
       return;
     }
 
-    api.deleteCard(card._id).then(() => {
-      const newCards = cards.filter(({ _id }) => _id !== card._id);
-      setCards(newCards);
-    });
+    api.deleteCard(card._id)
+      .then(() => {
+        const newCards = cards.filter(({ _id }) => _id !== card._id);
+        setCards(newCards)
+      })
+      .catch(console.error);
   } 
   
   useEffect(() => {
@@ -57,9 +61,7 @@ function App() {
         })
         setCards(cards);
       })
-      .catch((err) => {
-        console.error(err);
-      });
+      .catch(console.error);
 
       api.getUserInfo()
       .then(setCurrentUser)

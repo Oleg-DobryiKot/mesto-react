@@ -7,14 +7,13 @@ function PopupWithForm({title, name, submitText='Сохранить', children, 
         <button onClick={ onClose } type="button" className="popup__close"></button>
         <h3 className="popup__title">{title}</h3>
         <form 
-          name={name}
-          className={`popup__input-form popup__input-form_type-${name}`} 
+          name={ name }
+          className={`popup__input-form popup__input-form_type-${name}`}
+          onSubmit={ onSubmit }
           noValidate>
             { children }
             <button 
-              type="submit" 
-              form={ name }
-              onClick={ onSubmit }
+              type="submit"
               className={`popup__input-btn popup__input-btn_type-${name}`}>
               { submitText }
             </button>
