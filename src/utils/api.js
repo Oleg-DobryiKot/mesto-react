@@ -45,7 +45,7 @@ class Api {
       },
       body: JSON.stringify({
         name: data.name,
-        about: data.description
+        about: data.about
       })
     })
     return this._handleResponse(request);
@@ -69,6 +69,17 @@ class Api {
   deleteCard(cardId) {
     const request = fetch(`${this._path}/cards/${cardId}`, {
       method: 'DELETE',
+      headers: {
+        authorization: this._auth,
+        'Content-Type': 'application/json'
+      },
+    })
+    return this._handleResponse(request);
+  }
+
+  changeLikeCardStatus(cardId, isLiked) {
+    const request = fetch(`${this._path}/cards/likes/${cardId}`, {
+      method: isLiked ? 'PUT':'DELETE',
       headers: {
         authorization: this._auth,
         'Content-Type': 'application/json'
